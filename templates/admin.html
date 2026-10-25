@@ -1,0 +1,9 @@
+{% extends "base.html" %}{% block body %}
+<h2>Admin Console</h2>
+<p>Lookup a secret by key.</p>
+<form>
+  <input name="key" value="{{ key }}" placeholder="e.g. FLAG_ADMIN">
+  <button>Lookup</button>
+</form>
+{% if value %}<p><b>Value:</b> <code>{{ value }}</code></p>{% endif %}
+{% endblock %}

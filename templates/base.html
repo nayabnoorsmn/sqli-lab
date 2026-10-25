@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+<title>Student Portal</title>
+<style>
+  body{font-family:sans-serif;max-width:800px;margin:30px auto;padding:0 16px}
+  nav a{margin-right:12px}
+  table{border-collapse:collapse;width:100%}td,th{border:1px solid #ccc;padding:6px}
+  .err{color:#b00020;background:#fee;padding:8px}
+  input,button{padding:6px;margin:4px 0}
+</style>
+</head>
+<body>
+<h1>🎓 Student Portal</h1>
+<nav>
+  {% if session.uid %}
+    <a href="/search">Search</a>
+    <a href="/orders">My Orders</a>
+    <a href="/admin">Admin</a>
+    <span>[{{ session.uname }} / {{ session.role }}]</span>
+    <a href="/logout">Logout</a>
+  {% else %}
+    <a href="/login">Login</a>
+  {% endif %}
+</nav>
+<hr>
+{% block body %}{% endblock %}
+</body>
+</html>

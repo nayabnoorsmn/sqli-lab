@@ -1,0 +1,16 @@
+{% extends "base.html" %}{% block body %}
+<h2>Product Search</h2>
+<form>
+  <input name="q" value="{{ q }}" placeholder="search products">
+  <button>Search</button>
+</form>
+{% if err %}<div class="err">{{ err }}</div>{% endif %}
+{% if results %}
+<table>
+  <tr><th>ID</th><th>Name</th><th>Price</th></tr>
+  {% for r in results %}
+    <tr><td>{{ r[0] }}</td><td>{{ r[1] }}</td><td>{{ r[2] }}</td></tr>
+  {% endfor %}
+</table>
+{% endif %}
+{% endblock %}

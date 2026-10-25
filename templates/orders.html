@@ -1,0 +1,16 @@
+{% extends "base.html" %}{% block body %}
+<h2>Order History (uid={{ uid }})</h2>
+<form>
+  <input name="uid" value="{{ uid }}">
+  <button>Load</button>
+</form>
+{% if err %}<div class="err">{{ err }}</div>{% endif %}
+{% if rows %}
+<table>
+  <tr><th>ID</th><th>Product</th><th>Qty</th><th>Note</th></tr>
+  {% for r in rows %}
+    <tr><td>{{ r[0] }}</td><td>{{ r[1] }}</td><td>{{ r[2] }}</td><td>{{ r[3] }}</td></tr>
+  {% endfor %}
+</table>
+{% endif %}
+{% endblock %}
