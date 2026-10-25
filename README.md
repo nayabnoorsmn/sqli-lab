@@ -90,7 +90,7 @@ sqli-lab/
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/<your-username>/sqli-lab.git
+git clone https://github.com/<nayabnoorsmn>/sqli-lab.git
 cd sqli-lab
 ```
 
